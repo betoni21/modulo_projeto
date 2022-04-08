@@ -1,0 +1,30 @@
+
+<div style="margin: 0 auto; width: 85%; position:relative; top: 10px;">
+  <div class="custom-file">
+    <input
+      type="file"
+      class="custom-file-input"
+      id="customFile"
+      (change)="onChange($event)"
+      accept=".xlsx"
+      multiple
+    />
+    <label class="custom-file-label" for="customFile" id="customFileLabel"
+      >Selecionar Arquivo</label
+    >
+  </div>
+  <div class="progress">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      [style.width]="progress + '%'"
+    >
+      {{ progress }}%
+    </div>
+  </div>
+</div>
+<div style="position: absolute; width: auto; top: 15%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)">
+  <button type="button" class="btn btn-primary" (click)="onUpload()" [disabled]="!files">
+    Upload
+  </button>
+</div>
